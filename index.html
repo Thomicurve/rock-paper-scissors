@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Papers Scissors</title>
+</head>
+<body>
+    <header>
+        <article class="text-header">
+            <img src="images/logo.svg" alt="logo">
+        </article>
+        <article class="score">
+            <h2>SCORE</h2>
+            <h3 class="score-text">0</h3>
+        </article>
+    </header>
+    <main class="main">
+        <section class="images-options">
+            <div class="option-item" id="paper">
+                <img src="images/icon-paper.svg" alt="paper" class="option-input" >
+            </div>
+            <div class="option-item" id="scissors">
+                <img src="images/icon-scissors.svg" alt="scissors" class="option-input">
+            </div>
+            <div class="option-item" id="rock">
+                <img src="images/icon-rock.svg" alt="rock" class="option-input">
+            </div>
+        </section>
+    </main>
+
+    <section class="selected-option">
+        <div class="user-select" id="selected">
+            <h5>YOU PICKED</h5>
+            <div class="img-option-user" id="">
+                <img src="" alt="user option" class="option-input" >
+            </div>
+        </div>
+
+        <div class="result" style="display:none">
+            <h3>YOU LOSE</h3>
+            <button class="button-play">PLAY AGAIN</button>
+        </div>
+
+        <div class="bot-select" id="selected">
+            <h5>THE HOUSE PICKED</h5>
+            <div class="img-option-bot" id="">
+                <img src="" alt="house picked" class="option-input" >
+            </div>
+            <div class="img-option-disabled" ></div>   
+        </div>
+        
+    </section>
+
+    <section class="rules">
+        <h4>RULES</h4>
+    </section>
+    <section class="rules-menu">
+        <h5 id="block-menu">RULES</h5>
+        <img src="images/icon-close.svg" alt="icon close" id="close-menu-button">
+        <img src="images/image-rules.svg" alt="rules image">
+    </section>
+    <section class="background-black"></section>
+    <script src="app.js"></script>
+</body>
+</html>
