@@ -1,6 +1,6 @@
 const optionUser = document.querySelectorAll(".option-item");
 const scoreText = document.querySelector(".score-text");
-let score = 0;
+let score = localStorage.getItem("score");
 
 
 //Step 2
@@ -18,6 +18,17 @@ const optionBotBorder = document.querySelector(".img-option-bot");
 const imgOptionBot = document.querySelector(".img-option-bot").firstElementChild;
 
 
+
+window.addEventListener("load", () =>{
+    scoreText.textContent = score;
+})
+
+const saveScore = (scoreUser)=>{
+    localStorage.setItem("score", scoreUser);
+    scoreText.textContent = localStorage.getItem("score");
+}
+
+
 //STATUS: 0 = PERDIO  // STATUS: 1 = GANO // STATUS: 2 = EMPATE
 const step3 = (status, botOption)=>{
     
@@ -29,18 +40,21 @@ const step3 = (status, botOption)=>{
 
     if(status === 0) {
         textResult.textContent = "YOU LOSE";
-        score = 0;
-        scoreText.textContent = score;
+        if(score > 0) score--;
+        else score = 0;
+        
     }
     else if(status === 1){
         textResult.textContent = "YOU WIN";
         score++;
-        scoreText.textContent = score;
+        // scoreText.textContent = score;
     }
     else if(status === 2){
+        score = score;
         textResult.textContent = "DRAW";
     }
-    
+
+    saveScore(score);
     resultDiv.style.display = "block";
 }
 
