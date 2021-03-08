@@ -1,6 +1,7 @@
 const optionUser = document.querySelectorAll(".option-item");
 const scoreText = document.querySelector(".score-text");
-let score = localStorage.getItem("score");
+let scoreActual = 0
+let score = JSON.parse(localStorage.getItem("score")) + scoreActual;
 
 
 //Step 2
@@ -42,12 +43,12 @@ const step3 = (status, botOption)=>{
         textResult.textContent = "YOU LOSE";
         if(score > 0) score--;
         else score = 0;
-        
+        scoreText.textContent = score;
     }
     else if(status === 1){
         textResult.textContent = "YOU WIN";
         score++;
-        // scoreText.textContent = score;
+        scoreText.textContent = score;
     }
     else if(status === 2){
         score = score;
